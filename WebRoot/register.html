@@ -1,0 +1,43 @@
+<jsp:useBean id="userBean" class="mybean.data.Register" scope="request" />
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<base href="<%=basePath%>">
+<HTML>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<BODY style="background:url('images/bg.jpg');background-size:cover">
+	<Font size=2>
+		<link rel="stylesheet" href="layui/css/layui.css"> <a
+		href="right.html" class="layui-btn layui-btn-radius layui-btn-danger"
+		style="float:right">返回</a>
+		<div align="center" style="clear:both">
+			<table border=2>
+				<tr>
+					<th>注册</th>
+				</tr>
+				<FORM action="helpRegister" method="post" name=form>
+					<tr>
+						<td>用户名称：<Input type=text name="logname"></td>
+					</tr>
+					<tr>
+						<td>用户密码：<Input type=password name="password">
+					</tr>
+					<tr>
+						<td>重复密码：<Input type=password name="again_password"></td>
+					</tr>
+			</table>
+			<tr>
+				<td><Input type=submit name="g" value="提交"
+					class="layui-btn layui-btn-radius layui-btn-primary"></td>
+			</tr>
+			<input type=reset name="重置"
+				class="layui-btn layui-btn-radius layui-btn-primary">
+			</FORM>
+		</div>
+		<div align="center" style="color:blue">
+			<p>
+				注册反馈：
+				<jsp:getProperty name="userBean" property="backNews" />
+			</p>
+		</div>
+	</Font>
+</body>
+</HTML>

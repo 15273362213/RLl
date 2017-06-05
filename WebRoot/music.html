@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+  <head>
+  <meta name="viewport" content="width=100%; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;"/>
+        <!--声明当前页面的编码集；国际编码集utf-8-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		<!--三要素-->
+<title>shishifanfan</title>
+<meta name="Keywords" content="关键词，关键词">
+  <meta name="Description" content="">
+
+  <!--css/js-->
+  <style type="text/css">
+  *{margin:0;padding:0;}
+
+  body{background:url("images/bg.jpg");background-size:cover;font-size:12px;font-family:"微软雅黑";color:#666}
+  /*以点开头的css样式称之为类样式*/
+  /*music start*/
+  .music{width:322px;height:635px;margin: 30px auto;position:relative;}
+  .music .m-top{height:42px;background:url("images/phone_top.png");}2017/3/22
+  .music .m-info{height:20px;background:url("images/top.jpg")}
+  .music .m-title{height:40px;background:#000;text-align:center;line-height:40px;font-size:18px;border-left:1px solid #fff;border-right:1px solid #fff;}
+  .music .m-con{height:486px;background:url("images/zhimin.jpg");background-size:cover;border-left:1px solid #fff;border-right:1px solid #fff;}
+  .music .m-bottom{height:47px;background:url("images/phone_bottom.png");}
+  .music .m-btn{width:40px;height:40px;display:block;background:url("images/normalmusic.svg");background-size:cover;position:absolute;top:125px;right:30px;}
+  /*end music*/
+
+  /*定义旋转动画的关键帧*/
+  @-webkit-keyframes music{
+       from {
+	    -webkit-transform: rotate(0deg)
+	   }  to {
+	        -webkit-transform: rotate(360deg)
+	   }
+  }
+ /*调用关键帧*/
+ .shifan{
+     -webkit-animation: music 1.2s linear infinite;
+
+ }
+ 
+ @media screen and (max-width:580px){
+      .music{width:100%;margin:0;}
+      .music .m-top,.music .m-info,.music .m-bottom{display:none;}
+	  .music .m-con{height:700px;border:none;}
+	  .music .m-title{border:none;}
+ }
+  
+  </style>
+
+  </head>
+  <body>
+<!--类样式-->
+<!--music start-->
+<div class="music">
+<div class="m-top"></div>
+<div class="m-info"></div>
+<div class="m-title">SF</div>
+<div class="m-con"></div>
+<div class="m-bottom"></div>
+<a href="#" class="m-btn"></a>
+
+</div>
+<!--end music-->
+
+
+
+
+<!--引入jQuery官方类库-->
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	//创建mp3播放器
+var audioDom = document.createElement("audio");
+    //设置播放器的地址
+	audioDom.src = "mp3/geqian.mp3";
+
+
+  
+   //点击按钮
+   $(".m-btn").click(function(){
+	   if(audioDom.paused) {
+		   audioDom.play();
+	   } else {
+		   audioDom.pause();
+	   }
+	   
+	  
+       $(this).toggleClass("shifan");
+   });
+
+   
+
+});
+
+
+</script>
+
+</body>
+</html>
